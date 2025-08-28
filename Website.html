@@ -4,14 +4,26 @@
     <meta charset="UTF-8">
     <title>Hello World Website</title>
     <script>
-        function function-name() {
-            // >>> put a prompt here, ask the user for a new name <<< 
-            // Use document.getElementById("your id").textContent = .... to change the level 1 header to say something new
+        function changeName() {
+            let usersName = prompt("What is your name?");
+            if (usersName === null) {
+                usersName = "World";
+            }
+            document.getElementById("hello-name").innerText = "Hello, " + usersName + "!";
+        }
+
+        function changeColor() {
+            let usersColor = prompt("What color do you want the message to be?");
+            if (usersColor === null) {
+                usersColor = "black";
+            }
+            document.getElementById("hello-name").style.color = usersColor;
         }
     </script>
 </head>
 <body>
-    <h1 id="your-id-here">Hello, World!</h1>
-    <button onclick="function-name()">label-on-button</button>
+    <h1 id="hello-name">Hello, World!</h1>
+    <button onclick="changeName()">Change Name</button>
+    <button onclick="changeColor()">Change Color</button>
 </body>
 </html>
